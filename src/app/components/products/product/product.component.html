@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="card-body">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+            <div class="form-group">
+                <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+
+                <input
+                    type="text"
+                    class="form-control mb-1"
+                    name="name"
+                    #name="ngModel"
+                    [(ngModel)]="productService.selectedProduct.name"
+                    placeholder="add product name"
+                />
+
+                <input
+                    type="text"
+                    class="form-control mb-1"
+                    name="category"
+                    #name="ngModel"
+                    [(ngModel)]="productService.selectedProduct.category"
+                    placeholder="add product category"
+                />
+
+                <input
+                    type="text"
+                    class="form-control mb-1"
+                    name="location"
+                    #name="ngModel"
+                    [(ngModel)]="productService.selectedProduct.location"
+                    placeholder="add product location"
+                />
+
+                <input
+                    type="text"
+                    class="form-control mb-1"
+                    name="price"
+                    #name="ngModel"
+                    [(ngModel)]="productService.selectedProduct.price"
+                    placeholder="add product price"
+                />
+            </div>
+            <div class="from-group">
+                <button class="btn btn-primary mr-1" type="submit">
+                    <i class="fas fa-plus-circle"></i>&nbsp;Add product
+                </button>
+                <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+                    <i class="fas fa-sync-alt"></i>&nbsp;Reset
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
